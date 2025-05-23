@@ -80,14 +80,6 @@ The MCMC chains produce the posterior distributions for each model parameter. Fr
 
 where $p_{16}$, $p_{50}$, and $p_{84}$ are the 16th, 50th, and 84th percentiles of the sampled posterior distribution.
 
-Each parameter $\theta$ is thus reported as:
-
-$
-\theta = \tilde{\theta}_{-\Delta_{-}}^{+\Delta_{+}}
-$
-
-This notation provides a reliable estimate of the parameter’s central value and its associated 68% credible interval.
-
 ## 📥 Required Python Packages
 
 Before running the notebook, make sure the following Python packages are installed:
