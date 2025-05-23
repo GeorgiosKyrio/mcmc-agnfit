@@ -42,7 +42,7 @@ These priors and initials are input interactively or via a cell in the notebook.
 
 ### 📄 2. CSV Data Format
 
-Users must supply a CSV file with the following **required columns**:
+Users must supply a CSV file named `data.csv` with the following **required columns**:
 
 | Column               | Description                          |
 |----------------------|--------------------------------------|
