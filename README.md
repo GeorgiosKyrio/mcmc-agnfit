@@ -31,9 +31,8 @@ The disk spectrum is compared to observed photometric data in frequency units, u
 
 Before running the MCMC, the user is required to provide:
 
--redshift `z` of the AGN under investigation
--viewing angle theta of the AGN in degrees
-
+- **Redshift** `z` of the AGN under investigation
+- **Viewing angle** `theta` of the AGN in degrees
 - **Initial guesses** and **prior ranges** for the following parameters:
   - `log_M` – Logarithmic black hole mass (base 10), in solar masses
   - `log_Mdot` – Logarithmic accretion rate, in solar masses per year
