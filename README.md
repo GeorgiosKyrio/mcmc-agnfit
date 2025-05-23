@@ -2,7 +2,7 @@
 Spectral fitting of AGN data using MCMC sampling for astrophysical parameter estimation.
 # MCMC-AGNFit
 
-**MCMC-AGNFit** is a Python tool for fitting Active Galactic Nucleus (AGN) spectra using the Shakura–Sunyaev accretion disk model and Markov Chain Monte Carlo (MCMC) sampling via the `emcee` package.
+**mcmc-agnfit** is a Python tool for fitting Active Galactic Nucleus (AGN) spectra using the Shakura–Sunyaev accretion disk model and Markov Chain Monte Carlo (MCMC) sampling via the `emcee` package.
 
 ---
 
