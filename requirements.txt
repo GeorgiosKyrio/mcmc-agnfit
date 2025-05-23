@@ -5,4 +5,4 @@ matplotlib
 emcee
 corner
 astropy
-h5py
+ipython
