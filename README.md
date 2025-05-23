@@ -39,6 +39,7 @@ Before running the MCMC, the user is required to provide:
   - `log_f` – Logarithmic error used in the log_likelihood function
 
 These priors and initials are input interactively or via a cell in the notebook.
+- **overlay_number** `n` that gives the number of spectra that are going to be shown in the overlay graph
 
 ### 📄 2. CSV Data Format
 
@@ -60,14 +61,13 @@ frequency,freq_error,flux_freq,flux_freq_error
 
 ## 📦 3. Output Files
 
-
-
 After running the notebook, the following output files are generated:
 
 | File              | Description                                                                 |
 |-------------------|-----------------------------------------------------------------------------|
 | `output.h5`       | HDF5 file containing the raw MCMC chains for the sampled parameters         |
 | `corner_plot.png` | Corner plot showing the posterior distributions of the model parameters     |
+| `overlay`         | Overlay of the accretion disk spectra for different posterior parameters    |
 | *Terminal Output* | A printed summary of each parameter's median and uncertainty range          |
 
 ### 📈 Posterior Summary
