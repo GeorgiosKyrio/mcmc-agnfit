@@ -79,7 +79,7 @@ where $p_{16}$, $p_{50}$, and $p_{84}$ are the 16th, 50th, and 84th percentiles 
 Before running the notebook, make sure the following Python packages are installed:
 
 ```
-pip install numpy pandas scipy matplotlib emcee corner astropy h5py
+pip install numpy pandas scipy matplotlib emcee corner astropy 
 ```
 
 Alternatively, install all dependencies with:
