@@ -92,10 +92,10 @@ This notation provides a reliable estimate of the parameter’s central value an
 
 Before running the notebook, make sure the following Python packages are installed:
 
-```bash
-pip install numpy pandas scipy matplotlib emcee corner astropy h5py
+```
+pip install numpy pandas scipy matplotlib emcee corner astropy h5py```
 
 Alternatively, install all dependencies with:
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
