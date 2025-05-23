@@ -12,7 +12,7 @@ The code models AGN continuum emission using a standard **Shakura–Sunyaev thin
 
 - **Black hole mass** (M)
 - **Mass accretion rate** (ṁ)
-- **Viewing angle (cos i)** 
+- **Viewing angle (cos θ)** 
 
 The disk spectrum is compared to observed photometric data in frequency units, using Bayesian inference to estimate posterior distributions for these physical parameters.
 
