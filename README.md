@@ -48,7 +48,7 @@ Users must supply a CSV file with the following **required columns**:
 | Column               | Description                          |
 |----------------------|--------------------------------------|
 | `frequency`          | Frequency in Hz                      |
-| `freq_error`         | Frequency error (optional)           |
+| `freq_error`         | Frequency error                      |
 | `flux_freq`          | νFν value in CGS units               |
 | `flux_freq_error`    | Uncertainty in νFν                   |
 
