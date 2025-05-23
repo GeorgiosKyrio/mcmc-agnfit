@@ -98,6 +98,7 @@ pip install numpy pandas scipy matplotlib emcee corner astropy h5py
 
 Alternatively, install all dependencies with:
 
-```pip install -r requirements.txt
+```
+pip install -r requirements.txt
 ```
 
