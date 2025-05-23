@@ -57,3 +57,43 @@ Example CSV:
 frequency,freq_error,flux_freq,flux_freq_error
 1.0e14,1.0e12,2.5e-13,1.0e-14
 ...
+
+## 📦 Output Files
+
+After running the notebook, the following output files are generated:
+
+| File              | Description                                                                 |
+|-------------------|-----------------------------------------------------------------------------|
+| `output.h5`       | HDF5 file containing the raw MCMC chains for the sampled parameters         |
+| `corner_plot.png` | Corner plot showing the posterior distributions of the model parameters     |
+| *Terminal Output* | A printed summary of each parameter's median and uncertainty range          |
+
+### 📈 Posterior Summary
+
+The MCMC chains produce the posterior distributions for each model parameter. From these distributions, we extract:
+
+- The **median value** (50th percentile), $\tilde{\theta} = p_{50}$,
+- The **lower bound** of the 1σ confidence interval, $\Delta_{-} = p_{50} - p_{16}$,
+- The **upper bound** of the 1σ confidence interval, $\Delta_{+} = p_{84} - p_{50}$,
+
+where $p_{16}$, $p_{50}$, and $p_{84}$ are the 16th, 50th, and 84th percentiles of the sampled posterior distribution.
+
+Each parameter $\theta$ is thus reported as:
+
+\[
+\theta = \tilde{\theta}_{-\Delta_{-}}^{+\Delta_{+}}
+\]
+
+This notation provides a reliable estimate of the parameter’s central value and its associated 68% credible interval.
+
+## 📥 Required Python Packages
+
+Before running the notebook, make sure the following Python packages are installed:
+
+```bash
+pip install numpy pandas scipy matplotlib emcee corner astropy h5py
+
+Alternatively, install all dependencies with:
+
+pip install -r requirements.txt
+
