@@ -56,8 +56,9 @@ Example CSV:
 ```csv
 frequency,freq_error,flux_freq,flux_freq_error
 1.0e14,1.0e12,2.5e-13,1.0e-14
+```
 
-### 📦 3. Output Files
+## 📦 3. Output Files
 
 
 
