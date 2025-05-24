@@ -184,7 +184,7 @@ fit.summarize_posteriors()
 ```
 
 
-> These values are just examples. Adjust according to the specific AGN you are analyzing and your desired sampling precision and **make sure that your data.csv file is in the same directory as your script**.
+> These values are just examples. Adjust according to the specific AGN you are analyzing and your desired sampling precision and **make sure that your data.csv file is in the same directory as your script and is in the appropriate form(see exapmple)**.
 
 ### 2️⃣ Run the Script Directly (`mcmc-code.py`)
 
