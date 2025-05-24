@@ -176,8 +176,10 @@ fit = MCMCAGNFit(
 
 ```
 
+**Again we have the Mdotedd as the physical constraint(maximum) for the accretion rate**
 
-Write for example the following in your python script(again we have the Mdotedd as the physical constraint for the accretion rate) :
+
+Write for example the following in your python script:
 
 ```
 from mcmc_agnfit import MCMCAGNFit
