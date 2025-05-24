@@ -86,8 +86,8 @@ class MCMCAGNFit:
     def log_prior(self, params):
         M, Mdot, logf = params
         Mdot_Edd = L_Edd_factor * (M / M_sun) / (0.1 * c**2)
-        if np.log10(self.M_range[0])+np.log10(Msun) < M < np.log10(self.M_range[1])+np.log10(Msun) and \
-           np.log10(self.Mdot_min)+np.log10(Msun/(365*24*3600)) < Mdot < np.log10(Mdot_Edd) and \
+        if np.log10(self.M_range[0])+np.log10(M_sun) < M < np.log10(self.M_range[1])+np.log10(M_sun) and \
+           np.log10(self.Mdot_min)+np.log10(M_sun/(365*24*3600)) < Mdot < np.log10(Mdot_Edd) and \
            self.logf_range[0] < logf < self.logf_range[1]:
             return 0.0
         return -np.inf
