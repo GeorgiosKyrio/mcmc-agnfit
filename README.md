@@ -112,7 +112,7 @@ The MCMC chains produce the posterior distributions for each model parameter. Fr
 
 where $p_{16}$, $p_{50}$, and $p_{84}$ are the 16th, 50th, and 84th percentiles of the sampled posterior distribution.
 
-## 📥 Required Python Packages
+## 📥 4.Required Python Packages
 
 Before running the notebook, make sure the following Python packages are installed:
 
@@ -126,7 +126,7 @@ Alternatively, install all dependencies with:
 pip install -r requirements.txt
 ```
 
-## 🚀 How to Run the Code
+## 🚀 5.How to Run the Code
 
 To run the AGN accretion disk MCMC fitting script (`mcmc_agnfit.py`), follow these steps:
 
