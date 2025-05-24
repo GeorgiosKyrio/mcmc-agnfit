@@ -60,7 +60,7 @@ Below is an example of the input values for a blazar:
 | `z`              | 3.41           | —                 | (no prior)                         | 
 | `theta`          | 3             | degrees           | (no prior)                         | 
 | `M`              | 2.5e9         | M☉                | 5e8 to 2e10                        | 
-| `Mdot`           | 0.7           | M☉/year           | 1e-3 to Mdotedd                    | 
+| `Mdot`           | 0.7           | M☉/year           | 1e-1 to Mdotedd                    | 
 | `logf`           | -3            |                   | -6 to -1                           | 
 | `overlay_number` | 100           | —                 | —                                  | 
 | `nwalkers`       | 30            | —                 | (no prior)                         | 
