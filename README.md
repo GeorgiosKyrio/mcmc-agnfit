@@ -158,7 +158,7 @@ pip install -r requirements.txt
 
 
 **Integration in the python script**
-Write for exapmple teh following in your python script :
+Write for example the following in your python script :
 
 ```
 from mcmc_agnfit import MCMCAGNFit
@@ -184,7 +184,7 @@ fit.summarize_posteriors()
 ```
 
 
-> These values are just examples. Adjust according to the specific AGN you are analyzing and your desired sampling precision and **make sure that your data.csv file is in the same directory as your script and is in the appropriate form(see exapmple)**.
+> These values are just examples. Adjust according to the specific AGN you are analyzing and your desired sampling precision and **make sure that your data.csv file is in the same directory as your script and is in the appropriate form(see example)**.
 
 ### 2️⃣ Run the Script Directly (`mcmc-code.py`)
 
