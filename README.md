@@ -25,6 +25,8 @@ The disk spectrum is compared to observed photometric data in frequency units, u
 
 Before running the MCMC, the user is required to provide:
 
+**Important to note that for the maximum Accretion Rate we use the physical constraint of the Eddington Limit**
+
 - **Redshift** `z` of the AGN under investigation
 - **Viewing angle** `theta` of the AGN in degrees
 - **Initial guesses** and **prior ranges** for the following parameters:
@@ -34,6 +36,8 @@ Before running the MCMC, the user is required to provide:
 
 These priors and initials are input interactively or via a cell in the notebook.
 - **overlay_number** `n` that gives the number of spectra that are going to be shown in the overlay graph
+
+
 
 ### 📄 2. CSV Data Format
 
