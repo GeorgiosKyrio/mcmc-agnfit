@@ -85,7 +85,11 @@ class MCMCAGNFit:
 
     def log_prior(self, params):
         M, Mdot, logf = params
-        Mdot_Edd = L_Edd_factor * (M / M_sun) / (0.1 * c**2)
+        
+        M_linear=10**M
+        Mdot_linear=10**Mdot
+        
+        Mdot_Edd = L_Edd_factor * (M_linear / M_sun) / (0.1 * c**2)
         if np.log10(self.M_range[0])+np.log10(M_sun) < M < np.log10(self.M_range[1])+np.log10(M_sun) and \
            np.log10(self.Mdot_min)+np.log10(M_sun/(365*24*3600)) < Mdot < np.log10(Mdot_Edd) and \
            self.logf_range[0] < logf < self.logf_range[1]:
@@ -94,7 +98,11 @@ class MCMCAGNFit:
 
     def log_likelihood(self, params):
         M, Mdot, logf = params
-        model_fluxes = self.simulate_spectrum(10**self.freq_log, M, Mdot) * 10**self.freq_log * (1 + self.z)
+
+        M_linear=10**M
+        Mdot_linear=10**Mdot
+        
+        model_fluxes = self.simulate_spectrum(10**self.freq_log, M_linear, Mdot_linear) * (10**self.freq_log) * (1 + self.z)
         model_log = np.log10(model_fluxes)
         sigma2 = self.flux_log_err**2 + np.exp(2 * logf)
         return -0.5 * np.sum((self.flux_log - model_log)**2 / sigma2 + np.log(sigma2))
