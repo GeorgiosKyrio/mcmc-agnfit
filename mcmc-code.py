@@ -165,7 +165,7 @@ flux_errors_log = flux_error_log_upper  # Using upper errors
 log_M_min = (float(input("Min M(Msun): ")))
 log_M_max = (float(input("Max M(Msun): ")))
 
-log_Mdot_min = (float(input("Min Mdot(M_sun/year): )))
+log_Mdot_min = (float(input("Min Mdot(M_sun/year): ")))          
 print("For the maximum Mdot the Mdotedd has been used...")
 log_f_min = (float(input("Min log_f:") ))
 lof_f_max = (float(input("Max log_f:") ))
