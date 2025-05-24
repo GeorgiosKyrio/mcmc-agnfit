@@ -174,6 +174,12 @@ fit = MCMCAGNFit(
     nburn=
 )
 
+fit.run_sampler()   #Runs the MCMC algorithm and stores the samples.
+fit.plot_corner()   #Creates and saves the corner plot of posterior distributions.
+fit.plot_overlay()  #Plots observed data with multiple sampled model spectra overlaid
+fit.summarize_posteriors()  #Calculates and saves the median and ±1σ intervals for each parameter.
+
+
 ```
 
 **Again we have the Mdotedd as the physical constraint(maximum) for the accretion rate**
