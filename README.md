@@ -25,20 +25,49 @@ The disk spectrum is compared to observed photometric data in frequency units, u
 
 Before running the MCMC, the user is required to provide:
 
+
+
+### 🔬 Physical and Model Parameters
+
+| Parameter     | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| `z`           | **Redshift** of the AGN.             |
+| `theta`       | **Viewing angle** of the AGN in degrees. |
+| `M`           | Initial guess and prior range for the **black hole mass** (in solar masses). |
+| `Mdot`        | Initial guess and prior range for the **mass accretion rate** (in solar masses per year). |
+| `logf`           | Initial guess and prior range for the **error term** used in the log-likelihood function. Represents fractional noise or model uncertainty. |
+
 **Important to note that for the maximum Accretion Rate we use the physical constraint of the Eddington Limit**
 
-- **Redshift** `z` of the AGN under investigation
-- **Viewing angle** `theta` of the AGN in degrees
-- **Initial guesses** and **prior ranges** for the following parameters:
-  - `M` – Black hole mass , in solar masses
-  - `Mdot` – Accretion rate, in solar masses per year
-  - `log_f` – Logarithmic error used in the log_likelihood function
+### ⚙️ MCMC Configuration Parameters
 
-These priors and initials are input interactively or via a cell in the notebook.
-- **overlay_number** `n` that gives the number of spectra that are going to be shown in the overlay graph
-- **nwalkers**
-- **nsteps**
-- **nburn**
+| Parameter        | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| `overlay_number` | Number of model spectra to overlay on the data plot from posterior samples. |
+| `nwalkers`       | Number of walkers (independent chains) for the MCMC sampler. More walkers improve exploration but increase compute time. |
+| `nsteps`         | Total number of steps each walker should take. Larger values result in better convergence. |
+| `nburn`          | Number of initial steps to discard. These are excluded from the final posterior analysis. |
+
+All of the parameters are entered **interactively** through prompts when the script runs!
+
+
+### 🧪 Sample Input Values and Suggested Priors
+
+Below is an example of the input values for a blazar:
+
+| Parameter        | Example Value | Unit              | Suggested Prior Limits            | 
+| `z`              | 3.41           | —                 |(no prior)                         | 
+| `theta`          | 3             | degrees           |(no prior)                         | 
+| `M`              | 2.5e9         | M☉                | 5e8 to 2e10                        | 
+| `Mdot`           | 0.7           | M☉/year           | 1e-3 to Mdotedd                        | 
+| `logf`              | -3           |         | -6 to -1                       | 
+| `overlay_number` | 100           | —                 | —                                  | 
+| `nwalkers`       | 30            | —                 | (no prior)        | 
+| `nsteps`         | 2000          | —                 | (no prior) |
+| `nburn`          | 900           | —                 | (no prior)               | 
+
+> These values are just examples. Adjust according to the specific AGN you are analyzing and your desired sampling precision.
+
 
 
 
