@@ -56,17 +56,19 @@ All of the parameters are entered **interactively** through prompts when the scr
 Below is an example of the input values for a blazar:
 
 | Parameter        | Example Value | Unit              | Suggested Prior Limits            | 
-| `z`              | 3.41           | —                 |(no prior)                         | 
-| `theta`          | 3             | degrees           |(no prior)                         | 
+|------------------|---------------|-------------------|------------------------------------|
+| `z`              | 3.41           | —                 | (no prior)                         | 
+| `theta`          | 3             | degrees           | (no prior)                         | 
 | `M`              | 2.5e9         | M☉                | 5e8 to 2e10                        | 
-| `Mdot`           | 0.7           | M☉/year           | 1e-3 to Mdotedd                        | 
-| `logf`              | -3           |         | -6 to -1                       | 
+| `Mdot`           | 0.7           | M☉/year           | 1e-3 to Mdotedd                    | 
+| `logf`           | -3            |                   | -6 to -1                           | 
 | `overlay_number` | 100           | —                 | —                                  | 
-| `nwalkers`       | 30            | —                 | (no prior)        | 
-| `nsteps`         | 2000          | —                 | (no prior) |
-| `nburn`          | 900           | —                 | (no prior)               | 
+| `nwalkers`       | 30            | —                 | (no prior)                         | 
+| `nsteps`         | 2000          | —                 | (no prior)                         |
+| `nburn`          | 900           | —                 | (no prior)                         | 
 
 > These values are just examples. Adjust according to the specific AGN you are analyzing and your desired sampling precision.
+
 
 
 
