@@ -128,7 +128,10 @@ class MCMCAGNFit:
         with Pool() as pool:
             sampler = emcee.EnsembleSampler(self.nwalkers, ndim, self.log_posterior, pool=pool, backend=backend)
             sampler.run_mcmc(pos, self.nsteps, progress=True)
-
+        
+        out_dir = "./"  # or any directory you want
+        filename = os.path.join(out_dir, "output.h5")
+        
         self.samples = sampler.get_chain(discard=self.nburn, thin=15, flat=True)
 
     def plot_corner(self):
