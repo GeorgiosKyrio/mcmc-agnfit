@@ -133,7 +133,7 @@ def log_prior(params):
    M_dot_linear = 10**M_dot
    Mdot_Edd = L_Edd_factor * (M_bh_linear / M_sun) / (0.1 * c**2)
     # Prior
-   if (np.log10(log_M_min) + np.log10(M_sun) < M_bh < np.log10(log_M_max) + np.log10(M_sun)) and  (np.log10(log_Mdot_min) < M_dot < np.log10(Mdot_Edd))  and (log_f_min < log_f <lof_f_max) :
+   if (np.log10(log_M_min) + np.log10(M_sun) < M_bh < np.log10(log_M_max) + np.log10(M_sun)) and  (np.log10(log_Mdot_min)+np.log10(M_sun / (365 * 24 * 3600)) < M_dot < np.log10(Mdot_Edd))  and (log_f_min < log_f <lof_f_max) :
 
     return 0.0
 
