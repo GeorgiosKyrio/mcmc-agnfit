@@ -130,7 +130,7 @@ pip install -r requirements.txt
 
 There are **two ways** to run the AGN accretion disk MCMC fitting code.
 
-First method is used to integrate the script in bigger workflows and more more flexibility and the second one for running the code independently
+First method is used to integrate the script in bigger workflows and have flexibility and the second one for running the code independently
 
 
 ### 1️⃣Import and Use the MCMCAGNFit  Class
