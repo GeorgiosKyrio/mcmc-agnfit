@@ -96,8 +96,8 @@ class MCMCAGNFit:
     def log_prior(self, params):
         M, Mdot, logf = params
         Mdot_Edd = L_Edd_factor * (M / M_sun) / (0.1 * c**2)
-        if self.M_range[0] < M < self.M_range[1] and \
-           self.Mdot_range[0] < Mdot < min(self.Mdot_range[1], Mdot_Edd) and \
+        if np.log10(self.M_range[0])+np.log10(Msun) < M < np.log10(self.M_range[1])+np.log10(Msun) and \
+           np.log10(self.Mdot_range[0])+np.log10(Msun/(365*24*3600)) < Mdot < np.log10(self.Mdot_range[1])+np.log10(Msun/(365*24*3600)) and \
            self.logf_range[0] < logf < self.logf_range[1]:
             return 0.0
         return -np.inf
@@ -162,6 +162,8 @@ class MCMCAGNFit:
         plt.loglog(10**self.freq_log, 10**self.flux_log, 'bo', label="Observed Data")
         plt.xlabel("Frequency [Hz]")
         plt.ylabel("Flux Density * Frequency [erg/s/cm²]")
+        plt.ylim(1e-15,1e-11)
+        plt.xlim(1e12,1e16)
         plt.title("Overlay of Model Spectra")
         plt.grid(True, which="both", ls="--")
         plt.savefig("model_overlay.png")
