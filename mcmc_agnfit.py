@@ -7,7 +7,6 @@ from astropy.io import ascii
 import corner
 from multiprocessing import Pool
 import os
-import h5py
 
 # Constants in CGS units
 c = 3e10
