@@ -122,6 +122,9 @@ class MCMCAGNFit:
                    self.initial_values[2]]
         pos = initial + np.abs(2e-1 * np.random.randn(self.nwalkers, ndim))
 
+        out_dir = "./"  # or any directory you want
+        filename = os.path.join(out_dir, "output.h5")
+
         backend = emcee.backends.HDFBackend("output.h5")
         backend.reset(self.nwalkers, ndim)
 
@@ -129,8 +132,7 @@ class MCMCAGNFit:
             sampler = emcee.EnsembleSampler(self.nwalkers, ndim, self.log_posterior, pool=pool, backend=backend)
             sampler.run_mcmc(pos, self.nsteps, progress=True)
         
-        out_dir = "./"  # or any directory you want
-        filename = os.path.join(out_dir, "output.h5")
+        
         
         self.samples = sampler.get_chain(discard=self.nburn, thin=15, flat=True)
 
