@@ -128,11 +128,15 @@ pip install -r requirements.txt
 
 ## 🚀 5.How to Run the Code
 
-To run the AGN accretion disk MCMC fitting script (`mcmc_agnfit.py`), follow these steps:
+There are **two ways** to run the AGN accretion disk MCMC fitting code.
 
----
+First method is used to integrate the script in bigger workflows and more more flexibility and the second one for running the code independently
 
-### 1️⃣ Install Python & Required Packages
+
+### 1️⃣Import and Use the MCMCAGNFit  Class
+
+
+**Install Python & Required Packages**
 
 Ensure Python 3.x is installed. Then install all required dependencies by downloading or cloning the repository and running:
 
@@ -152,16 +156,67 @@ and then
 pip install -r requirements.txt
 ```
 
-### 2️⃣ Prepare Your Data File
 
-Have an appropriate CSV file(see example) named `data.csv` and place it in the **same directory** as `mcmc_agnfit.py`.
+**Integration in the python script**
+Write for exapmple teh following in your python script :
 
-### 3️⃣ Run the Script
+'''
+from mcmc-agnfit import MCMCAGNFit
+
+fit = MCMCAGNFit(
+    csv_file="data.csv",
+    z=3.41,
+    theta=3,
+    M_range=[5e8, 2e10],
+    Mdot_range=[1e-3, 10],
+    logf_range=[-6, -1],
+    initial_values=[2.5e9, 0.7, -3],
+    overlay_number=100,
+    nwalkers=30,
+    nsteps=2000,
+    nburn=900
+)
+
+fit.run_sampler()
+fit.plot_corner()
+fit.plot_overlay()
+fit.summarize_posteriors()
+'''
+
+> These values are just examples. Adjust according to the specific AGN you are analyzing and your desired sampling precision and **make sure that your data.csv file is in the same directory as your script**.
+
+### 2️⃣ Run the Script Directly (`mcmc-code.py`)
+
+**Install Python & Required Packages**
+
+Ensure Python 3.x is installed. Then install all required dependencies by downloading or cloning the repository and running:
+
+```
+git clone https://github.com/GeorgiosKyrio/mcmc-agnfit.git
+```
+
+and then
+
+```
+cd mcmc-agnfit
+```
+
+and then 
+
+```
+pip install -r requirements.txt
+```
+
+**Prepare Your Data File**
+
+Have an appropriate CSV file(see example) named `data.csv` and place it in the **same directory** as `mcmc-code.py`.
+
+**Run the Script**
 
 Run the script and then input the necceasary parameters with:
 
 ```
-python mcmc_agnfit.py
+python mcmc-code.py
 ```
 
 ---
