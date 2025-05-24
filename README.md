@@ -158,7 +158,7 @@ pip install -r requirements.txt
 
 
 **Integration in the python script**
-Write for example the following in your python script :
+Write for example the following in your python script(again we have the Mdotedd as the physical constraint for the accretion rate) :
 
 ```
 from mcmc_agnfit import MCMCAGNFit
@@ -168,7 +168,7 @@ fit = MCMCAGNFit(
     z=3.41,
     theta=3,
     M_range=[5e8, 2e10],
-    Mdot_range=[1e-1, 70],
+    Mdot_min=1e-1,
     logf_range=[-6, -1],
     initial_values=[2.5e9, 20, -3],
     overlay_number=100,
