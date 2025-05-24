@@ -160,8 +160,8 @@ pip install -r requirements.txt
 **Integration in the python script**
 Write for exapmple teh following in your python script :
 
-'''
-from mcmc-agnfit import MCMCAGNFit
+```
+from mcmc_agnfit import MCMCAGNFit
 
 fit = MCMCAGNFit(
     csv_file="data.csv",
@@ -181,7 +181,8 @@ fit.run_sampler()
 fit.plot_corner()
 fit.plot_overlay()
 fit.summarize_posteriors()
-'''
+```
+
 
 > These values are just examples. Adjust according to the specific AGN you are analyzing and your desired sampling precision and **make sure that your data.csv file is in the same directory as your script**.
 
