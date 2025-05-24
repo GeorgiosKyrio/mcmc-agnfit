@@ -30,12 +30,15 @@ Before running the MCMC, the user is required to provide:
 - **Redshift** `z` of the AGN under investigation
 - **Viewing angle** `theta` of the AGN in degrees
 - **Initial guesses** and **prior ranges** for the following parameters:
-  - `log_M` – Logarithmic black hole mass (base 10), in solar masses
-  - `log_Mdot` – Logarithmic accretion rate, in solar masses per year
+  - `M` – Black hole mass , in solar masses
+  - `Mdot` – Accretion rate, in solar masses per year
   - `log_f` – Logarithmic error used in the log_likelihood function
 
 These priors and initials are input interactively or via a cell in the notebook.
 - **overlay_number** `n` that gives the number of spectra that are going to be shown in the overlay graph
+- **nwalkers**
+- **nsteps**
+- **nburn**
 
 
 
@@ -91,6 +94,47 @@ Alternatively, install all dependencies with:
 ```
 pip install -r requirements.txt
 ```
+
+## 🚀 How to Run the Code
+
+To run the AGN accretion disk MCMC fitting script (`mcmc_agnfit.py`), follow these steps:
+
+---
+
+### 1️⃣ Install Python & Required Packages
+
+Ensure Python 3.x is installed. Then install all required dependencies by downloading or cloning the repository and running:
+
+```
+git clone https://github.com/GeorgiosKyrio/mcmc-agnfit.git
+```
+
+and then
+
+```
+cd mcmc-agnfit
+```
+
+and then 
+
+```
+pip install -r requirements.txt
+```
+
+### 2️⃣ Prepare Your Data File
+
+Have an appropriate CSV file(see example) named `data.csv` and place it in the **same directory** as `mcmc_agnfit.py`.
+
+### 3️⃣ Run the Script
+
+Run the script and then input the necceasary parameters with:
+
+```
+python mcmc_agnfit.py
+```
+
+---
+
 ## 📜 References
 
 - Shakura, N. I., & Sunyaev, R. A. (1973). *Black holes in binary systems. Observational appearance.* Astronomy and Astrophysics, **24**, 337–355.
