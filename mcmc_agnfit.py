@@ -23,13 +23,13 @@ Omega_Lambda = 0.692
 
 
 class MCMCAGNFit:
-    def __init__(self, csv_file, z, theta, M_range, Mdot_range, logf_range,
+    def __init__(self, csv_file, z, theta, M_range, Mdot_min, logf_range,
                  initial_values, overlay_number, nwalkers, nsteps, nburn):
         self.csv_file = csv_file
         self.z = z
         self.theta = np.deg2rad(theta)
         self.M_range = M_range
-        self.Mdot_range = Mdot_range
+        self.Mdot_min = Mdot_min
         self.logf_range = logf_range
         self.initial_values = initial_values
         self.overlay_number = overlay_number
@@ -88,7 +88,7 @@ class MCMCAGNFit:
         M, Mdot, logf = params
         Mdot_Edd = L_Edd_factor * (M / M_sun) / (0.1 * c**2)
         if np.log10(self.M_range[0])+np.log10(Msun) < M < np.log10(self.M_range[1])+np.log10(Msun) and \
-           np.log10(self.Mdot_range[0])+np.log10(Msun/(365*24*3600)) < Mdot < np.log10(self.Mdot_range[1])+np.log10(Msun/(365*24*3600)) and \
+           np.log10(self.Mdot_min)+np.log10(Msun/(365*24*3600)) < Mdot < np.log10(Mdot_Edd) and \
            self.logf_range[0] < logf < self.logf_range[1]:
             return 0.0
         return -np.inf
