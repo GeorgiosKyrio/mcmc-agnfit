@@ -249,9 +249,61 @@ python mcmc-code.py
 
 ---
 
+## ✴️ Run With Dust Extinction Model (`MCMCAGNFitExt`)
+
+The file `mcmc_agnfitext.py` provides an extended version of the AGN fitting model that incorporates **dust extinction** using the **Gordon et al. (2023)** parameterization of interstellar attenuation (G23). This allows for the fitting of **E(B–V)** as an additional physical parameter in the MCMC process (with Rv=3.1) .
+
+### 🆕 Additional Model Parameter
+
+| Parameter   | Description                             | Unit | Example Value | Typical Range |
+|-------------|-----------------------------------------|------|----------------|----------------|
+| `ebv_range` | Prior range for the color excess E(B–V) | mag  | (0.0, 0.5)      | (0.0 to 1.0)   |
+
+This model uses the **G23 extinction law** implemented via `dust_extinction.parameter_averages.G23` to apply extinction at each frequency in the observer's frame.
+
+---
+
+### 📄 Data Format (Unchanged)
+
+This extended version still expects input data in CSV format with the following columns:
+
+```csv
+frequency,freq_error,flux_freq,flux_freq_error
+1.0e14,1.0e12,2.5e-13,1.0e-14
+
+```
+
+### ⚙️ Example: Using MCMCAGNFitExt with Extinction
+
+```
+from mcmc_agnfitext import MCMCAGNFitExt
+
+fit = MCMCAGNFitExt(
+    csv_file="data.csv",
+    z=3.41,
+    theta_deg=3,
+    M_range=[5e8, 2e10],
+    Mdot_min=1e-1,
+    logf_range=[-6, -1],
+    initial_values=[2.5e9, 20, -3, 0.05],  # includes E(B–V)
+    overlay_number=100,
+    nwalkers=30,
+    nsteps=2000,
+    nburn=900,
+    ebv_range=(0.0, 0.5)  # user-defined prior on E(B–V)
+)
+
+fit.run_sampler()
+fit.plot_corner()
+fit.plot_overlay()
+fit.summarize_posteriors()
+```
+---
+
 ## 📜 References
 
 - Shakura, N. I., & Sunyaev, R. A. (1973). *Black holes in binary systems. Observational appearance.* Astronomy and Astrophysics, **24**, 337–355.
 - Foreman-Mackey, D., Hogg, D. W., Lang, D., & Goodman, J. (2013). *emcee: The MCMC Hammer.* Publications of the Astronomical Society of the Pacific, **125**(925), 306–312. DOI: [10.1086/670067](https://doi.org/10.1086/670067)
+- Gordon, K. D., Clayton, G. C., Misselt, K. A., & Wolf, A. (2023). A New Parameterization of the Interstellar Extinction Curve from the Ultraviolet to the Near-infrared. Astrophysical Journal. DOI: 10.3847/1538-4357/acf3e3
 
 ---
